@@ -1,3 +1,6 @@
+// For debugger in node execute node --inspect http.
+// access to chrome://inspect and inspect my app http
+// I can add my local resources in chrome tab inspector > Sources > Add forlder to workspace
 const http = require('http');
 
 http.createServer(router).listen(3000);
@@ -8,6 +11,7 @@ function router(req, res) {
 
     switch (req.url) {
         case '/hola':
+            let saludo = hola()
             res.write('Hola, que tal');
             res.end();
             break;
@@ -25,4 +29,7 @@ function router(req, res) {
     // res.end();
 }
 
+function hola(){
+    return 'ola q tal function'
+}
 console.log("Escuchando http en el puerto 3000");
